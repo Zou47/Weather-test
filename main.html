@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./node_modules/chart.js/dist/Chart.min.js"></script>
+    <title>腾讯天气</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <a id="return"><img src="./img/little/return.png"></a>
+            <a id="forward"><img src="./img/little/forward.png"></a>
+            <p id="city">
+                <a id="switch-city"><img src="./img/little/location.png"></a>
+                <span id="city-name"></span>
+            </p>
+            <div id="air-quality-box">
+                <p id="air-quality-num"></p>
+                <p id="air-quality-value"></p>
+            </div>
+            <p id="temperature-now"></p>
+            <p class="weather-now" id="weather-now-a"></p>
+            <div id="wind-humidity">
+                <!-- <p id="hidden">啊</p> -->
+                <p id="show"></p>
+            </div>
+            <p id="tips">好~</p>
+        </div>
+
+        <div id="tomorrow">
+            <div class="date-box">
+                <p class="date-top">
+                    <span>今天</span>
+                    <span id="max-min-now"></span>
+                </p>
+                <p class="date-bottom">
+                    <span class="weather-now" id="weather-now-b"></span>
+                    <img id="img-now" src="">
+                </p>
+            </div>
+            <div class="date-box">
+                <p class="date-top">
+                    <span>明天</span>
+                    <span id="max-min-tomorrow"></span>
+                </p>
+                <p class="date-bottom">
+                    <span id="weather-tomorrow"></span>
+                    <img id="img-tomorrow" src="">
+                </p>
+            </div>
+        </div>
+
+        <div id="hours">
+            <div id="hours-scroll">
+                <ol id="hours-weather">
+                    <li class="hours-item">
+                        <p class="hours-time"></p>
+                        <img class="hours-img" src="" alt="">
+                        <p class="hours-temperature"></p>
+                    </li>
+                    <li class="hours-item">
+                        <p class="hours-time"></p>
+                        <img class="hours-img" src="" alt="">
+                        <p class="hours-temperature"></p>
+                    </li>
+                    <li class="hours-item">
+                        <p class="hours-time"></p>
+                        <img class="hours-img" src="" alt="">
+                        <p class="hours-temperature"></p>
+                    </li>
+                    <li class="hours-item">
+                        <p class="hours-time"></p>
+                        <img class="hours-img" src="" alt="">
+                        <p class="hours-temperature"></p>
+                    </li>
+                    <li class="hours-item">
+                        <p class="hours-time"></p>
+                        <img class="hours-img" src="" alt="">
+                        <p class="hours-temperature"></p>
+                    </li>
+                    <li class="hours-item">
+                        <p class="hours-time"></p>
+                        <img class="hours-img" src="" alt="">
+                        <p class="hours-temperature"></p>
+                    </li>
+                    <li class="hours-item">
+                        <p class="hours-time"></p>
+                        <img class="hours-img" src="" alt="">
+                        <p class="hours-temperature"></p>
+                    </li>
+                    <li class="hours-item">
+                        <p class="hours-time"></p>
+                        <img class="hours-img" src="" alt="">
+                        <p class="hours-temperature"></p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="days">
+            <div id="days-scroll">
+                <ol id="days-weather">
+                    <li class="days-item">
+                        <p class="days-week"></p>
+                        <p class="days-date"></p>
+                        <p class="days-weather"></p>
+                        <img class="days-img" src="" alt="">
+                        <div>
+                            <p class="days-wind"></p>
+                            <p class="days-wind-speed"></p>
+                        </div>
+                    </li>
+                    <li class="days-item">
+                        <p class="days-week"></p>
+                        <p class="days-date"></p>
+                        <p class="days-weather"></p>
+                        <img class="days-img" src="" alt="">
+                        <div>
+                            <p class="days-wind"></p>
+                            <p class="days-wind-speed"></p>
+                        </div>
+                    </li>
+                    <li class="days-item">
+                        <p class="days-week"></p>
+                        <p class="days-date"></p>
+                        <p class="days-weather"></p>
+                        <img class="days-img" src="" alt="">
+                        <div>
+                            <p class="days-wind"></p>
+                            <p class="days-wind-speed"></p>
+                        </div>
+                    </li>
+                    <li class="days-item">
+                        <p class="days-week"></p>
+                        <p class="days-date"></p>
+                        <p class="days-weather"></p>
+                        <img class="days-img" src="" alt="">
+                        <div>
+                            <p class="days-wind"></p>
+                            <p class="days-wind-speed"></p>
+                        </div>
+                    </li>
+                    <li class="days-item">
+                        <p class="days-week"></p>
+                        <p class="days-date"></p>
+                        <p class="days-weather"></p>
+                        <img class="days-img" src="" alt="">
+                        <div>
+                            <p class="days-wind"></p>
+                            <p class="days-wind-speed"></p>
+                        </div>
+                    </li>
+                    <li class="days-item">
+                        <p class="days-week"></p>
+                        <p class="days-date"></p>
+                        <p class="days-weather"></p>
+                        <img class="days-img" src="" alt="">
+                        <div>
+                            <p class="days-wind"></p>
+                            <p class="days-wind-speed"></p>
+                        </div>
+                    </li>
+                    <li class="days-item">
+                        <p class="days-week"></p>
+                        <p class="days-date"></p>
+                        <p class="days-weather"></p>
+                        <img class="days-img" src="" alt="">
+                        <div>
+                            <p class="days-wind"></p>
+                            <p class="days-wind-speed"></p>
+                        </div>
+                    </li>
+                </ol>
+                <div id="canvas-img">
+                    <canvas id="canvas" width=500px height=136px></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="life">
+            <ul>
+                <li class="life-item" id="zwx">
+                    <img src="./img/life/zwx.png" alt="">
+                    <p class="level">强</p>
+                    <p class="title">紫外线强度</p>
+                </li>
+                <li class="life-item" id="yd">
+                    <img src="./img/life/yd.png" alt="">
+                    <p class="level">多喝水</p>
+                    <p class="title">减肥指数</p>
+                </li>
+                <li class="life-item" id="xt">
+                    <img src="./img/life/xt.png" alt="">
+                    <p class="level">不易波动</p>
+                    <p class="title">健臻·血糖指数</p>
+                </li>
+                <li class="life-item" id="cy">
+                    <img src="./img/life/cy.png" alt="">
+                    <p class="level">炎热</p>
+                    <p class="title">穿衣指数</p>
+                </li>
+                <li class="life-item" id="xc">
+                    <img src="./img/life/xc.png" alt="">
+                    <p class="level">较适宜</p>
+                    <p class="title">洗车指数</p>
+                </li>
+                <li class="life-item" id="wr">
+                    <img src="./img/life/wr.png" alt="">
+                    <p class="level">中</p>
+                    <p class="title">空气污染扩散指数</p>
+                </li>
+            </ul>
+            <div id="hid-tips">
+                <p id="tips-title">指数</p>
+                <p id="tips-submit"></p>
+                <p id="tips-close">我知道了</p>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>数据来源于中央气象台</p>
+            <p>Copyright © 1999 - 2019 ZOUSIQI. All Rights Reserved</p>
+        </div>
+
+        <div id="cover"></div>
+
+        <div id="search">
+            <div id="search-box">
+                <input type="text" id="search-input" placeholder="搜索地区也搜索不到啊">
+                <a id="search-cancel">取消</a>
+            </div>
+            <ul id="city-box">
+                <!-- <li class="city-name">
+                    重庆
+                </li> -->
+            </ul>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
